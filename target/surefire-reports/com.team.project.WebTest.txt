@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: com.team.project.WebTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 8.361 s <<< FAILURE! - in com.team.project.WebTest
-testHomePage  Time elapsed: 8.361 s  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 22.22 s <<< FAILURE! - in com.team.project.WebTest
+testNewsPage  Time elapsed: 17.315 s  <<< ERROR!
 org.openqa.selenium.WebDriverException: 
 Failed to decode response from marionette
 Build info: version: '4.8.0', revision: '267030adea'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [384f6512-ea16-4d61-b32f-d8adf37c8637, findElement {using=tag name, value=body}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250130195129, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 8368, moz:profile: C:\Users\ya322\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 384f6512-ea16-4d61-b32f-d8adf37c8637
-	at com.team.project.WebTest.testHomePage(WebTest.java:46)
+Command: [68bf52b9-0fe1-405a-8af6-b2feea5aa36a, findElement {using=css selector, value=article h2}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250130195129, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 18352, moz:profile: C:\Users\elemo\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 68bf52b9-0fe1-405a-8af6-b2feea5aa36a
+	at com.team.project.WebTest.testNewsPage(WebTest.java:58)
 

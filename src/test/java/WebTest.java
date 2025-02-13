@@ -20,11 +20,9 @@ public class WebTest {
     @BeforeEach
     public void setUp() {
         // Указываем путь до GeckoDriver
-        System.setProperty("webdriver.gecko.driver", "C:/Users/ya322/Downloads/geckodriver-v0.35.0-win64/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:/Users/elemo/Downloads/Telegram Desktop/geckodriver-v0.35.0-win64/geckodriver.exe");
 
         FirefoxOptions options = new FirefoxOptions();
-        
-        // Можно добавить дополнительные параметры, если нужно
         // options.setHeadless(true);  // Для работы без GUI
 
         driver = new FirefoxDriver(options);
@@ -38,19 +36,31 @@ public class WebTest {
     @Test
     public void testHomePage() {
         driver.get("https://rf4game.ru/forum/index.php?/forum/5-технические-вопросы/");
-        
         // Ожидаем появления части текста на странице
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        
-        // Здесь ищем фразу, которая должна появиться в теле страницы
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Русская Рыбалка 4"));
-        
-        // Также проверяем, что текст действительно есть в исходном коде страницы
+
         String pageSource = driver.getPageSource();
         assertTrue(pageSource.contains("Русская Рыбалка 4"));
-        
-        // Можно также добавить проверку других фраз из текста, например:
         assertTrue(pageSource.contains("долгожданное продолжение"));
         assertTrue(pageSource.contains("игровой мир"));
+    }
+
+    @Test
+    public void testNewsPage() {
+        driver.get("https://rf4game.ru/news/");
+
+        // Ожидаем появления элемента с новостью
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+        // Ищем первый элемент с новостью, например, используя тег 'article' или класс, который содержит новость
+        WebElement firstNewsElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("article h2")));  // Здесь нужно заменить на точный селектор новостей
+
+        // Проверяем, что на странице есть новость
+        String newsText = firstNewsElement.getText();
+        assertTrue(newsText.length() > 0, "Новая новость не найдена!");
+
+        // Можно добавить дополнительную проверку на актуальность новости, например, проверив наличие слов "обновление" или даты
+        assertTrue(newsText.contains("обновление"), "Обновление не найдено в новости!");
     }
 }
