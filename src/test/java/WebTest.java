@@ -35,8 +35,7 @@ public class WebTest {
 
     @Test
     public void testHomePage() {
-        driver.get("http://rf4game.ru/");
-
+        driver.get("https://rf4game.ru/forum/index.php?/forum/5-технические-вопросы/");
         // Ожидаем появления части текста на странице
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Русская Рыбалка 4"));
