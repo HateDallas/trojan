@@ -37,7 +37,7 @@ public class WebTest {
 
     @Test
     public void testHomePage() {
-        driver.get("https://rf4game.ru/forum/");
+        driver.get("https://rf4game.ru/forum/index.php?/forum/5-технические-вопросы/");
         
         // Ожидаем появления части текста на странице
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
